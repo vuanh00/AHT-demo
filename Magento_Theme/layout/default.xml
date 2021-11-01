@@ -5,9 +5,26 @@
  * See COPYING.txt for license details.
  */
 -->
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <<update handle="default_head_blocks"/>
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <!-- <<move element="top.search" destination="header.panel.wrapper" before="-" /> -->
+        <!-- /*removw top search */ -->
+        <!-- <referenceBlock name="top.search" remove="true"/> -->
+
+        <!-- /*add cms block in xml*/ -->
+        <!-- <referenceContainer name="content">
+            <block class="Magento\Cms\Block\Block" name="block_identifier">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">contact-us-info</argument>
+                </arguments>
+            </block>
+        </referenceContainer> -->
+
+        <!-- /*add cms block in phtml file*/  -->
+        <!-- <referenceContainer name="header.container">
+            <block class="Magento\Framework\View\Element\Template" name="test" template="Magento_Theme::test.phtml" />
+        </referenceContainer> -->
+
+        <!-- move form subcribe  -->
+        <!-- <move element="form.subscribe" destination="header.container" before="-"/> -->
     </body>
 </page>
